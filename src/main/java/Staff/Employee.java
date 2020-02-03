@@ -25,6 +25,9 @@ public abstract class Employee {
     }
 
     public void raiseSalary(double salaryRaise){
+        if (salaryRaise < 0){
+            salaryRaise = 0;
+        }
         this.salary += salaryRaise;
     }
 
@@ -33,4 +36,8 @@ public abstract class Employee {
         return bonus;
     }
 
+
+    public void setName(String newName) {
+        this.name = newName;
+    }
 }
