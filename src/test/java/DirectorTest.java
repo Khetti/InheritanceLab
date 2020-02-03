@@ -61,4 +61,10 @@ public class DirectorTest {
         assertEquals("James", director.getName());
     }
 
+    @Test
+    public void canRejectNull(){
+        director.setName(null);
+        assertEquals("John", director.getName());
+    }
+
 }
