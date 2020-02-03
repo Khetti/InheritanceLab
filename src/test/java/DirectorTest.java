@@ -10,12 +10,43 @@ public class DirectorTest {
 
     @Before
     public void Director(){
-        director = new Director("John", "DD585098B", 120000, "Pretty much just conference calls", 2000000);
+        director = new Director("John", "DD585098B", 120000, "Conference Calls", 2000000);
     }
 
     @Test
     public void canGetBudget(){
         assertEquals(2000000, director.getBudget(), 0.00);
+    }
+
+    @Test
+    public void canGetName(){
+        assertEquals("John", director.getName());
+    }
+
+    @Test
+    public void canGetNationalInsuranceNo(){
+        assertEquals("DD585098B", director.getNationalInsuranceNo());
+    }
+
+    @Test
+    public void canGetSalary(){
+        assertEquals(120000, director.getSalary(), 0.00);
+    }
+
+    @Test
+    public void canGetDeptName(){
+        assertEquals("Conference Calls", director.getDeptName());
+    }
+
+    @Test
+    public void canRaiseSalary(){
+        director.raiseSalary(10000);
+        assertEquals(130000, director.getSalary(), 0.00);
+    }
+
+    @Test
+    public void canCalculateBonus(){
+        assertEquals(1200, director.payBonus(), 0.00);
     }
 
 }
